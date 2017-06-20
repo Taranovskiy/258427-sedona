@@ -12,7 +12,7 @@ function initMap() {
 
   var googleMap = new google.maps.Map(map, mapOptions);
 
-  var markerImage = '../img/icon-map-marker.svg';
+  var markerImage = '/../img/icon-map-marker.svg';
 
   var mapMarker = new google.maps.Marker({
     icon: markerImage,
