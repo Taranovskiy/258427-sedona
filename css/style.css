@@ -25,6 +25,19 @@ body {
   line-height: 21px;
   color: #333333;
 }
+.bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 5000px;
+  background-image: url("../img/preview/sedona-index-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  opacity: 0.5;
+}
 .btn {
   display: inline-block;
   box-sizing: border-box;
@@ -242,6 +255,7 @@ body {
   padding-bottom: 52px;
 }
 .feedback__title {
+  display: block;
   margin: 0 auto;
   text-align: center;
   font-family: "ptsansbold", "Arial", sans-serif;
@@ -287,7 +301,7 @@ body {
 .feedback__input-wrap--contacts {
   -ms-flex-direction: column;
       flex-direction: column;
-  margin-bottom: 13px;
+  margin-bottom: -16px;
 }
 .feedback__input-wrap--contacts:last-of-type {
   margin-bottom: 0;
@@ -458,7 +472,7 @@ body {
 .feedback__label--contacts-email::after {
   content: "";
   position: absolute;
-  top: 253px;
+  top: 223px;
   right: 0;
   display: block;
   width: 58px;
@@ -995,6 +1009,9 @@ body {
   opacity: 0.3;
 }
 @media (min-width: 768px) {
+  .bg {
+    background-image: url("../img/preview/sedona-index-tablet.jpg");
+  }
   .btn--search {
     width: 460px;
   }
@@ -1030,7 +1047,7 @@ body {
     margin: 0 45px;
   }
   .feature__slogan--without-img {
-    margin: 0 50px;
+    margin: 0 40px;
     padding-bottom: 43px;
   }
   .feature--without-img:nth-child(2) .feature__slogan {
@@ -1254,6 +1271,7 @@ body {
     color: #000000;
   }
   .feedback__title--user-name {
+    text-align: left;
     margin: 0;
     margin-bottom: 57px;
     margin-left: 0;
@@ -1266,6 +1284,7 @@ body {
     background-color: #ffffff;
   }
   .feedback__title--comment {
+    text-align: left;
     margin-bottom: 73px;
     margin-left: 0;
   }
@@ -1341,6 +1360,7 @@ body {
     font-size: 30px;
   }
   .find-hotel__desc {
+    margin: 0 120px;
     margin-bottom: 41px;
   }
   .find-hotel__btn {
@@ -1373,18 +1393,22 @@ body {
     min-height: 55px;
     background-color: #ffffff;
   }
+  .main-nav__list--no-js {
+    display: -ms-flexbox;
+    display: flex;
+  }
   .main-nav__item {
     width: 20%;
     border: none;
     box-shadow: none;
   }
-  .main-nav__item:nth-child(3) {
+  .main-nav__item:nth-of-type(2) {
     margin-right: auto;
   }
-  .main-nav__item:nth-child(4) {
+  .main-nav__item:nth-of-type(3) {
     margin-right: -2px;
   }
-  .main-nav__item:last-child {
+  .main-nav__item:last-of-type {
     background-image: none;
   }
   .main-nav__link {
@@ -1659,6 +1683,9 @@ body {
   body {
     box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
   }
+  .bg {
+    background-image: url("../img/preview/sedona-index-desktop.jpg");
+  }
   .btn--feedback-sent {
     width: 480px;
     padding-right: 0;
@@ -1689,7 +1716,7 @@ body {
     margin-bottom: 10px;
   }
   .feature__slogan {
-    margin: 0 60px;
+    margin: 0 55px;
   }
   .features__title {
     margin-left: 380px;
@@ -1805,6 +1832,7 @@ body {
     margin-bottom: 65px;
   }
   .find-hotel__desc {
+    margin: 0 350px;
     margin-bottom: 47px;
   }
   .find-hotel__btn {
@@ -1827,9 +1855,22 @@ body {
     top: 162px;
     left: 48.7%;
   }
+  .option:nth-child(2) .option__desc {
+    margin: 0 70px;
+  }
+  .page-footer {
+    padding-bottom: 0;
+  }
+  .page-footer__social {
+    margin-bottom: 37px;
+  }
   .page-footer__copyright {
     position: relative;
     left: 7.5%;
+    margin-top: -37px;
+  }
+  .page-footer__hashtag {
+    margin-top: -4px;
   }
   .page-header__logo-img {
     width: 188px;
@@ -1946,9 +1987,6 @@ body {
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 100% auto;
-  }
-  .features__options-item .text-wrap {
-    display: none;
   }
   .find-hotel__desc .text-wrap {
     display: none;
