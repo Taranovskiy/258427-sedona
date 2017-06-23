@@ -1,14 +1,14 @@
 @font-face {
-  font-weight: normal;
+  font-weight: 400;
   font-family: "ptsans";
   font-style: normal;
   src: local("PT Sans"), url("/fonts/ptsans.woff2") format("woff2"), url("/fonts/ptsans.woff") format("woff");
 }
 @font-face {
-  font-weight: bold;
+  font-weight: 700;
   font-family: "ptsansbold";
   font-style: normal;
-  src: local("PT Sans"), url("/fonts/ptsansbold.woff2") format("woff2"), url("/fonts/ptsansbold.woff") format("woff");
+  src: local("PT Sans Bold"), url("/fonts/ptsansbold.woff2") format("woff2"), url("/fonts/ptsansbold.woff") format("woff");
 }
 html {
   background-color: #f2f2f2;
@@ -25,24 +25,11 @@ body {
   line-height: 21px;
   color: #333333;
 }
-.bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 5000px;
-  background-image: url("../img/preview/sedona-index-mobile.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  opacity: 0.5;
-}
 .btn {
   display: inline-block;
   box-sizing: border-box;
   width: 280px;
-  height: 58px;
+  min-height: 58px;
   padding-top: 17px;
   vertical-align: middle;
   text-align: center;
@@ -113,19 +100,22 @@ body {
   line-height: 26px;
   color: #000000;
 }
-.copyright__icon {
+.copyright__link {
   position: absolute;
   top: -4px;
   right: -35px;
   width: 62px;
   height: 62px;
 }
-.copyright__icon:hover {
+.copyright__link:hover {
   fill: #669ec0;
 }
-.copyright__icon:active {
+.copyright__link:active {
   opacity: 0.3;
   fill: #000000;
+}
+.feature {
+  background-color: #81b3d2;
 }
 .feature--without-img {
   background-color: #eeeeee;
@@ -143,6 +133,7 @@ body {
   overflow: hidden;
   background-position: 51% 0;
   background-size: cover;
+  background-color: #955940;
 }
 .feature__img--city {
   background-image: url("../img/photo-city.jpg");
@@ -184,21 +175,21 @@ body {
   text-align: center;
 }
 .features__title {
+  margin: 0 30px;
+  margin-bottom: 27px;
+  padding-top: 41px;
   font-family: "ptsansbold", "Arial", sans-serif;
   font-size: 18px;
   line-height: 26px;
   color: #000000;
-  margin: 0 30px;
-  margin-bottom: 27px;
-  padding-top: 41px;
 }
 .features__subtitle {
+  margin: 0 20px;
+  margin-bottom: 26px;
   font-family: "ptsans", "Arial", sans-serif;
   font-size: 14px;
   line-height: 26px;
   color: #000000;
-  margin: 0 20px;
-  margin-bottom: 26px;
 }
 .features__options {
   margin-bottom: 37px;
@@ -244,6 +235,9 @@ body {
 }
 .feedback__field--user-name {
   padding-bottom: 4px;
+}
+.feedback__field--contacts {
+  padding-bottom: 15px;
 }
 .feedback__field--comment {
   padding-bottom: 43px;
@@ -301,7 +295,6 @@ body {
 .feedback__input-wrap--contacts {
   -ms-flex-direction: column;
       flex-direction: column;
-  margin-bottom: -16px;
 }
 .feedback__input-wrap--contacts:last-of-type {
   margin-bottom: 0;
@@ -422,7 +415,7 @@ body {
 .feedback__input--emotions::-webkit-input-placeholder {
   font-family: "ptsansbold", "Arial", sans-serif;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 56px;
   color: #000000;
 }
 .feedback__input--user-name:-ms-input-placeholder,
@@ -430,11 +423,29 @@ body {
 .feedback__input--emotions:-ms-input-placeholder {
   font-family: "ptsansbold", "Arial", sans-serif;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 56px;
   color: #000000;
 }
 .feedback__input--user-name::placeholder,
 .feedback__input--contacts::placeholder,
+.feedback__input--emotions::placeholder {
+  font-family: "ptsansbold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 56px;
+  color: #000000;
+}
+.feedback__input--emotions::-webkit-input-placeholder {
+  font-family: "ptsansbold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+}
+.feedback__input--emotions:-ms-input-placeholder {
+  font-family: "ptsansbold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+}
 .feedback__input--emotions::placeholder {
   font-family: "ptsansbold", "Arial", sans-serif;
   font-size: 18px;
@@ -484,6 +495,7 @@ body {
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-left: 21px;
+  line-height: 5px;
   color: #ff5c5c;
   text-transform: none;
   visibility: hidden;
@@ -582,6 +594,7 @@ body {
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 50% 52%, 50% 100%, 50% 100%;
   background-size: 280px, cover, cover;
+  background-color: #1b3542;
 }
 .intro-img--inner-page {
   height: 160px;
@@ -604,6 +617,13 @@ body {
 .main-nav__list--no-js {
   display: block;
 }
+.main-nav__item-wrap {
+  margin: 0;
+  padding: 0;
+}
+.main-nav__item-wrap:last-of-type .main-nav__item:last-child {
+  background-image: linear-gradient(to bottom, #81b3d2 90%, rgba(0, 0, 0, 0.15));
+}
 .main-nav__item {
   display: -ms-flexbox;
   display: flex;
@@ -614,9 +634,6 @@ body {
 }
 .main-nav__item:first-child {
   box-shadow: none;
-}
-.main-nav__item:last-child {
-  background-image: linear-gradient(to bottom, #81b3d2 90%, rgba(0, 0, 0, 0.15));
 }
 .main-nav__link {
   -ms-flex-preferred-size: 100%;
@@ -636,7 +653,6 @@ body {
   background-color: #5496bd;
 }
 .main-nav__toggle {
-  outline: none;
   position: absolute;
   top: 16px;
   right: 21px;
@@ -646,6 +662,7 @@ body {
   font-size: 0;
   background-color: transparent;
   border: none;
+  outline: none;
   cursor: pointer;
 }
 .main-nav__toggle::before,
@@ -671,6 +688,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
+  background-color: #f3f1ec;
 }
 .map__marker {
   position: absolute;
@@ -953,7 +971,9 @@ body {
   text-align: center;
 }
 .video-box__content {
+  width: 320px;
   min-height: 200px;
+  background-color: #b19179;
   background-image: url("../img/video-mobile.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -961,11 +981,14 @@ body {
 }
 .video-box__controls {
   position: absolute;
+  right: 0;
   bottom: 41px;
+  left: 0;
   display: -ms-flexbox;
   display: flex;
   width: 280px;
   height: 43px;
+  margin: auto;
   background-color: rgba(0, 0, 0, 0.6);
   border-bottom: 65px solid #f2f2f2;
 }
@@ -990,8 +1013,8 @@ body {
 .video-box__icon {
   position: absolute;
   bottom: -43px;
-  fill: #5c6870;
   cursor: pointer;
+  fill: #5c6870;
 }
 .video-box__icon--revert {
   left: 25px;
@@ -1009,18 +1032,12 @@ body {
   opacity: 0.3;
 }
 @media (min-width: 768px) {
-  .bg {
-    background-image: url("../img/preview/sedona-index-tablet.jpg");
-  }
   .btn--search {
     width: 460px;
   }
   .btn--feedback-sent {
     width: 324px;
     padding-right: 7px;
-  }
-  .copyright__icon {
-    right: -35px;
   }
   .feature__header {
     -ms-flex-preferred-size: 33.3%;
@@ -1066,10 +1083,10 @@ body {
     flex-basis: 33.3%;
   }
   .features__title {
-    font-size: 21px;
-    margin-left: 100px;
     margin-right: 100px;
+    margin-left: 100px;
     padding-top: 50px;
+    font-size: 21px;
   }
   .features__subtitle {
     margin-bottom: 51px;
@@ -1077,6 +1094,8 @@ body {
   .features__options {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -ms-flex-align: start;
     align-items: flex-start;
     margin-bottom: 62px;
@@ -1133,7 +1152,7 @@ body {
     flex-basis: 100%;
     -ms-flex-order: 3;
     order: 3;
-    margin-bottom: 45px;
+    margin-bottom: 47px;
   }
   .feedback__fieldset--comment {
     -ms-flex-preferred-size: 50%;
@@ -1147,7 +1166,7 @@ body {
     -ms-flex-order: 4;
     order: 4;
     margin: 0;
-    margin-bottom: 0;
+    margin-bottom: 1px;
   }
   .feedback__fieldset--emotions {
     -ms-flex-preferred-size: 100%;
@@ -1174,6 +1193,7 @@ body {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    padding-bottom: 0;
   }
   .feedback__field--emotions {
     display: -ms-flexbox;
@@ -1227,8 +1247,9 @@ body {
   }
   .feedback__title-wrap::before {
     content: "";
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 48%;
+    width: 100%;
     display: block;
     border-bottom: 1px solid #f2f2f2;
   }
@@ -1236,13 +1257,6 @@ body {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
     margin-bottom: 24px;
-  }
-  .feedback__title-wrap--contacts::before {
-    content: "";
-    position: relative;
-    top: 50%;
-    display: block;
-    border-bottom: 1px solid #f2f2f2;
   }
   .feedback__title-wrap--showplace {
     -ms-flex-preferred-size: 100%;
@@ -1271,10 +1285,10 @@ body {
     color: #000000;
   }
   .feedback__title--user-name {
-    text-align: left;
     margin: 0;
     margin-bottom: 57px;
     margin-left: 0;
+    text-align: left;
   }
   .feedback__title--contacts {
     position: relative;
@@ -1284,9 +1298,9 @@ body {
     background-color: #ffffff;
   }
   .feedback__title--comment {
-    text-align: left;
     margin-bottom: 73px;
     margin-left: 0;
+    text-align: left;
   }
   .feedback__title--showplace {
     position: relative;
@@ -1320,6 +1334,7 @@ body {
   .feedback__label--error {
     margin-top: 3px;
     margin-left: auto;
+    line-height: 20px;
   }
   .feedback__label--comment {
     margin-bottom: 9px;
@@ -1349,6 +1364,7 @@ body {
   }
   .feedback__note-required {
     display: inline-block;
+    vertical-align: middle;
     -ms-flex-order: 7;
     order: 7;
     margin-top: 21px;
@@ -1386,10 +1402,8 @@ body {
   .main-nav__list {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     min-height: 55px;
     background-color: #ffffff;
   }
@@ -1397,19 +1411,29 @@ body {
     display: -ms-flexbox;
     display: flex;
   }
+  .main-nav__item-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 40.2%;
+    flex-basis: 40.2%;
+  }
+  .main-nav__item-wrap--left {
+    margin-right: auto;
+  }
+  .main-nav__item-wrap--right {
+    margin-left: auto;
+  }
   .main-nav__item {
-    width: 20%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
     border: none;
     box-shadow: none;
   }
-  .main-nav__item:nth-of-type(2) {
-    margin-right: auto;
-  }
-  .main-nav__item:nth-of-type(3) {
-    margin-right: -2px;
-  }
-  .main-nav__item:last-of-type {
+  .main-nav__item-wrap:last-of-type .main-nav__item:last-child {
     background-image: none;
+  }
+  .main-nav__item-wrap--right .main-nav__item:first-child {
+    margin-left: 6px;
   }
   .main-nav__link {
     font-family: "ptsansbold", "Arial", sans-serif;
@@ -1497,22 +1521,32 @@ body {
     margin: 0 45px;
   }
   .page-footer {
+    margin: 0 60px;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -ms-flex-align: center;
     align-items: center;
   }
   .page-footer__hashtag {
+    -ms-flex-preferred-size: 10%;
+    flex-basis: 10%;
     margin-top: -10px;
-    margin-right: -10px;
+    margin-right: -5px;
   }
   .page-footer__social {
-    margin-right: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 80%;
+    flex-basis: 80%;
+    margin-bottom: 44px;
   }
   .page-footer__copyright {
+    -ms-flex-preferred-size: 10%;
+    flex-basis: 10%;
     margin-top: -45px;
+    margin-right: 0px;
   }
   .page-header {
     margin: 0;
@@ -1628,6 +1662,7 @@ body {
     margin-bottom: 73px;
   }
   .video-box__content {
+    width: 648px;
     min-height: 500px;
     background-image: url("../img/video-tablet.jpg");
     background-repeat: no-repeat;
@@ -1652,8 +1687,8 @@ body {
     right: 42px;
   }
   .video-box__icon:hover {
-    fill: #ffffff;
     opacity: 0.6;
+    fill: #ffffff;
   }
   .video-box__icon:active {
     opacity: 0.3;
@@ -1683,12 +1718,12 @@ body {
   body {
     box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
   }
-  .bg {
-    background-image: url("../img/preview/sedona-index-desktop.jpg");
-  }
   .btn--feedback-sent {
     width: 480px;
     padding-right: 0;
+  }
+  .copyright__link {
+    right: -30px;
   }
   .features__item--reverse .feature__slogan {
     margin: 0 85px;
@@ -1719,8 +1754,9 @@ body {
     margin: 0 55px;
   }
   .features__title {
-    margin-left: 380px;
     margin-right: 380px;
+    margin-left: 380px;
+    padding-top: 51px;
   }
   .features__options {
     margin-bottom: 83px;
@@ -1736,15 +1772,18 @@ body {
     margin: 0 120px;
   }
   .feedback__fieldset--user-name {
-    margin-bottom: 43px;
+    margin-bottom: 44px;
     padding-left: 35px;
   }
   .feedback__fieldset--contacts {
-    margin-bottom: 44px;
+    margin-bottom: 46px;
   }
   .feedback__fieldset--comment {
     box-sizing: border-box;
     padding-left: 5px;
+  }
+  .feedback__fieldset--showplace {
+    margin-bottom: -1px;
   }
   .feedback__field--showplace {
     -ms-flex-pack: start;
@@ -1839,6 +1878,7 @@ body {
     margin-bottom: 66px;
   }
   .intro-img {
+    height: 518px;
     background-image: url("../img/text-sedona-index.svg"), url("../img/bg-intro-triangle-desktop.svg"), url("../img/bg-back-desktop.jpg");
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: 50% 46%, 100% 100%, 50% 100%;
@@ -1847,6 +1887,13 @@ body {
   .intro-img--inner-page {
     height: 302px;
     background-image: url("../img/text-sedona.svg"), url("../img/bg-intro-triangle-desktop.svg"), url("../img/bg-back-desktop.jpg");
+  }
+  .main-nav__item-wrap {
+    -ms-flex-preferred-size: 39.8%;
+    flex-basis: 39.8%;
+  }
+  .main-nav__item-wrap--right .main-nav__item:first-child {
+    margin-left: 0;
   }
   .map {
     background-image: url("../img/bg-map-desktop.jpg");
@@ -1860,17 +1907,22 @@ body {
   }
   .page-footer {
     padding-bottom: 0;
+    padding-left: 132px;
+    padding-right: 38px;
+    margin: 0 0;
+  }
+  .page-footer__hashtag {
+    margin-right: 0;
+    margin-top: -4px;
   }
   .page-footer__social {
     margin-bottom: 37px;
+    -ms-flex-preferred-size: 64.5%;
+    flex-basis: 64.5%;
   }
   .page-footer__copyright {
-    position: relative;
-    left: 7.5%;
+    margin-left: auto;
     margin-top: -37px;
-  }
-  .page-footer__hashtag {
-    margin-top: -4px;
   }
   .page-header__logo-img {
     width: 188px;
@@ -1927,6 +1979,7 @@ body {
     margin-bottom: 71px;
   }
   .video-box__content {
+    width: 800px;
     background-image: url("../img/video-desktop.jpg");
     background-repeat: no-repeat;
     background-size: 800px 500px;
